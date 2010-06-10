@@ -23,15 +23,11 @@ module BrighterPlanet
           quorum 'from diet class', :needs => :diet_class do |characteristics|
             characteristics[:diet_class].intensity
           end
-          
-          quorum 'default' do
-            fallback.intensity
-          end
         end
     
         committee :size do # returns kcal food
           quorum 'default' do
-            fallback.size
+            ::Diet.fallback.size
           end
         end
     
