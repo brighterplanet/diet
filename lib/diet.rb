@@ -1,5 +1,5 @@
 module BrighterPlanet
-  module BusTrip
+  module Diet
     def self.included(base)
       base.extend ::Leap::Subject
       base.decide :emission, :with => :characteristics do
