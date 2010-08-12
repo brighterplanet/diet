@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    diet (0.0.8)
+    diet (0.0.9)
       emitter (>= 0.0.1)
 
 GEM
