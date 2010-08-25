@@ -17,10 +17,10 @@ module BrighterPlanet
           end
       
           committee :intensity do # returns grams CO2 / kcal food
-            quorum 'from food group balance', :needs => :food_group_balance do |characteristics|
-              FoodGroup.names.collect do |group|
-                characteristics[:food_group_balance]["#{group}_share".to_sym] * FoodGroup.find_by_name(group).intensity
-              end.sum
+            quorum 'from food groups', :needs => FoodGroup.names.map(&:to_sym) do |characteristics|
+              FoodGroup.names.sum do |group|
+                characteristics[group] * FoodGroup[group].intensity
+              end
             end
       
             quorum 'from diet class', :needs => :diet_class do |characteristics|
