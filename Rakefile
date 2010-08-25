@@ -1,11 +1,7 @@
 require 'rubygems'
 unless ENV['NOBUNDLE']
-  begin
-    require 'bundler'
-    Bundler.setup
-  rescue LoadError
-    puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
-  end
+  require 'bundler'
+  Bundler.setup
 end
 
 require 'rake'
@@ -24,15 +20,15 @@ begin
     gem.test_files = Dir.glob(File.join('features', '**', '*.rb')) +
       Dir.glob(File.join('features', '**', '*.feature')) +
       Dir.glob(File.join('lib', 'test_support', '**/*.rb'))
-    gem.add_development_dependency 'activerecord', '3.0.0.beta4'
+    gem.add_development_dependency 'activerecord', '>=3.0.0.beta4'
     gem.add_development_dependency 'bundler', '>=1.0.0.beta.2'
-    gem.add_development_dependency 'cucumber', '=0.8.3'
-    gem.add_development_dependency 'jeweler', '=1.4.0'
+    gem.add_development_dependency 'cucumber', '>=0.8.3'
+    gem.add_development_dependency 'jeweler', '>=1.4.0'
     gem.add_development_dependency 'rake'
     gem.add_development_dependency 'rdoc'
-    gem.add_development_dependency 'rspec', '= 2.0.0.beta.17'
-    gem.add_development_dependency 'sniff', '=0.0.13' unless ENV['LOCAL_SNIFF']
-    gem.add_dependency 'emitter', '>= 0.0.1'
+    gem.add_development_dependency 'rspec', '>=2.0.0.beta.17'
+    gem.add_development_dependency 'sniff', '>=0.0.13' unless ENV['LOCAL_SNIFF']
+    gem.add_dependency 'emitter', '>=0.0.1'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
