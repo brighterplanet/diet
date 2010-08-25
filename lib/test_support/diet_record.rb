@@ -36,14 +36,4 @@ class DietRecord < ActiveRecord::Base
   def size_or_fallback
     size || self.class.fallback.size
   end
-  
-  def food_group_balance
-    return unless FoodGroup.names.map {|g| "#{g}_share".to_sym}.any? {|m| send m}
-    FoodGroup.names.inject({}) { |memo, g| memo["#{g}_share".to_sym] = send("#{g}_share".to_sym); memo}
-  end
-  
-  def food_group_balance=(balance)
-    raise ArgumentError, "Can't set food_group_balance directly" unless balance.nil?
-    update_attributes FoodGroup.names.inject({}) { |memo, g| memo["#{g}_share".to_sym] = nil; memo }
-  end
 end

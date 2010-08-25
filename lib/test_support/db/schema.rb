@@ -21,7 +21,6 @@ Sniff::Database.define_schema do
     t.float    "fruit_share"
     t.float    "vegetables_share"
     t.float    "oils_and_sugars_share"
-    t.datetime "new_retirement"
     t.date     "start_date"
     t.date     "end_date"
   end
