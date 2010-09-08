@@ -29,9 +29,7 @@ module BrighterPlanet
             FoodGroup.run_data_miner!
           end
           
-          process "pull in dependencies" do
-            run_data_miner_on_belongs_to_associations
-          end
+          process :run_data_miner_on_belongs_to_associations
         end
       end
     end
