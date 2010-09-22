@@ -1,10 +1,7 @@
-require 'characterizable'
-
 module BrighterPlanet
   module Diet
     module Characterization
       def self.included(base)
-        base.send :include, Characterizable
         base.characterize do
           has :diet_class
           has :red_meat_share, :trumps => :diet_class
@@ -24,7 +21,6 @@ module BrighterPlanet
             start_date.reveals :end_date
           end
         end
-        base.add_implicit_characteristics
       end
     end
   end

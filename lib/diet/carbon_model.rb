@@ -1,10 +1,7 @@
-require 'leap'
-
 module BrighterPlanet
   module Diet
     module CarbonModel
       def self.included(base)
-        base.extend ::Leap::Subject
         base.decide :emission, :with => :characteristics do
           committee :emission do # returns kg CO2
             quorum 'from intensity and size', :needs => [:intensity, :size, :active_subtimeframe] do |characteristics|
@@ -30,7 +27,7 @@ module BrighterPlanet
       
           committee :size do # returns kcal food
             quorum 'default' do
-              Diet.diet_model.fallback.size
+              base.fallback.size
             end
           end
       
