@@ -15,8 +15,8 @@ module BrighterPlanet
       
           committee :intensity do # returns grams CO2 / kcal food
             quorum 'from food groups', :needs => [:red_meat_share, :poultry_share, :fish_share, :eggs_share, :nuts_share, :dairy_share, :cereals_and_grains_share, :fruit_share, :vegetables_share, :oils_and_sugars_share] do |characteristics|
-              [:red_meat_share, :poultry_share, :fish_share, :eggs_share, :nuts_share, :dairy_share, :cereals_and_grains_share, :fruit_share, :vegetables_share, :oils_and_sugars_share].sum do |group|
-                characteristics[group] * FoodGroup[group].intensity
+              [:red_meat, :poultry, :fish, :eggs, :nuts, :dairy, :cereals_and_grains, :fruit, :vegetables, :oils_and_sugars].sum do |group|
+                characteristics["#{group}_share".to_sym].to_f * FoodGroup[group].intensity.to_f
               end
             end
       
