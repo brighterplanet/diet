@@ -4,22 +4,21 @@ module BrighterPlanet
       def self.included(base)
         base.characterize do
           has :diet_class
-          has :red_meat_share, :trumps => :diet_class
-          has :poultry_share, :trumps => :diet_class
-          has :fish_share, :trumps => :diet_class
-          has :eggs_share, :trumps => :diet_class
-          has :nuts_share, :trumps => :diet_class
-          has :dairy_share, :trumps => :diet_class
-          has :cereals_and_grains_share, :trumps => :diet_class
-          has :fruit_share, :trumps => :diet_class
-          has :vegetables_share, :trumps => :diet_class
-          has :oils_and_sugars_share, :trumps => :diet_class
+          has :red_meat_share
+          has :poultry_share
+          has :fish_share
+          has :eggs_share
+          has :nuts_share
+          has :dairy_share
+          has :cereals_and_grains_share
+          has :fruit_share
+          has :vegetables_share
+          has :oils_and_sugars_share
           has :size # TODO more standard unit?
-          has :proximity, :measures => :percentage # impotent for now
-          has :conventionality, :measures => :percentage # impotent for now
-          has :start_date do |start_date|
-            start_date.reveals :end_date
-          end
+          has :proximity
+          has :conventionality
+          has :start_date
+          has :end_date
         end
       end
     end
