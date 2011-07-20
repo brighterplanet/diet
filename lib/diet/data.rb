@@ -2,7 +2,7 @@ module BrighterPlanet
   module Diet
     module Data
       def self.included(base)
-        base.create_table do
+        base.force_schema do
           string   'diet_class_id'
           float    'proximity'
           float    'conventionality'
