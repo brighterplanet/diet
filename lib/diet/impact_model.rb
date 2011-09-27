@@ -4,10 +4,10 @@
 
 module BrighterPlanet
   module Diet
-    module CarbonModel
+    module ImpactModel
       def self.included(base)
-        base.decide :emission, :with => :characteristics do
-          committee :emission do # returns kg CO2
+        base.decide :impact, :with => :characteristics do
+          committee :carbon do # returns kg CO2
             quorum 'from intensity and size', :needs => [:intensity, :size, :active_subtimeframe] do |characteristics|
               #( grams CO2 / kcal food   ) * (   kcal food         )
               (characteristics[:intensity] * characteristics[:size]).grams.to(:kilograms) * characteristics[:active_subtimeframe].days
