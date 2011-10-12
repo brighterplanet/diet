@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc"
   ]
 
-  s.add_runtime_dependency 'emitter' unless ENV['LOCAL_EMITTER']
-  s.add_development_dependency 'sniff' unless ENV['LOCAL_SNIFF']
+  s.add_runtime_dependency 'emitter', '~>0.11.0' unless ENV['LOCAL_EMITTER']
+  s.add_development_dependency 'sniff', '~>0.11.0' unless ENV['LOCAL_SNIFF']
 end
 

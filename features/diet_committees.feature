@@ -2,9 +2,8 @@
     The diet model should generate correct committee calculations
 
   Scenario Outline: Intensity committee from diet class
-    Given a diet emitter
-    And a characteristic "diet_class.name" of "<diet_class>"
-    When the "intensity" committee is calculated
+    Given a characteristic "diet_class.name" of "<diet_class>"
+    When the "intensity" committee reports
     Then the conclusion of the committee should be "<intensity>"
     Examples:
       | diet_class | intensity |
@@ -13,8 +12,7 @@
       | vegetarian |      3.01 |
 
   Scenario Outline: Intensity committee from  food groups
-    Given a diet emitter
-    And a characteristic "red_meat_share" of "<meat>"
+    Given a characteristic "red_meat_share" of "<meat>"
     And a characteristic "poultry_share" of "<poultry>"
     And a characteristic "fish_share" of "<fish>"
     And a characteristic "eggs_share" of "<eggs>"
@@ -24,7 +22,7 @@
     And a characteristic "fruit_share" of "<fruit>"
     And a characteristic "vegetables_share" of "<veg>"
     And a characteristic "oils_and_sugars_share" of "<oil>"
-    When the "intensity" committee is calculated
+    When the "intensity" committee reports
     Then the committee should have used quorum "from food groups"
     And the conclusion of the committee should be "<intensity>"
     Examples:
