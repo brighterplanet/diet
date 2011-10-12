@@ -1,6 +1,9 @@
   Feature: Diet Committee Calculations
     The diet model should generate correct committee calculations
 
+  Background:
+    Given a diet
+
   Scenario Outline: Intensity committee from diet class
     Given a characteristic "diet_class.name" of "<diet_class>"
     When the "intensity" committee reports

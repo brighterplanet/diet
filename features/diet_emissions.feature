@@ -1,6 +1,9 @@
 Feature: Diet Emissions Calculations
   The diet model should generate correct emission calculations
 
+  Background:
+    Given a diet
+
   Scenario Outline: Standard Calculations for diet classes
     Given it has "diet_class.name" of "<diet_class>"
     When impacts are calculated
