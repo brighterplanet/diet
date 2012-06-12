@@ -10,9 +10,9 @@
     Then the conclusion of the committee should be "<intensity>"
     Examples:
       | diet_class | intensity |
-      |   standard |      3.78 |
-      |      vegan |      2.57 |
-      | vegetarian |      3.01 |
+      |   standard |    4.3531 |
+      | vegetarian |    3.3599 |
+      |      vegan |    2.8982 |
 
   Scenario Outline: Intensity committee from  food groups
     Given a characteristic "red_meat_share" of "<meat>"
@@ -30,4 +30,4 @@
     And the conclusion of the committee should be "<intensity>"
     Examples:
       | meat | poultry | fish | eggs | nuts | dairy | cereals | fruit | veg | oil | intensity |
-      | 0.1  | 0.1     | 0.1  | 0.1  | 0.1  | 0.1   | 0.1     | 0.1   | 0.1 | 0.1 | 5         |
+      | 0.1  | 0.1     | 0.1  | 0.1  | 0.1  | 0.1   | 0.1     | 0.1   | 0.1 | 0.1 | 5.538     |

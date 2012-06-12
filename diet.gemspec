@@ -23,6 +23,8 @@ Gem::Specification.new do |s|
      "README.rdoc"
   ]
 
+  s.add_runtime_dependency 'earth'
   s.add_runtime_dependency 'emitter',   '~>0.11.0'
   s.add_development_dependency 'sniff', '~>0.11.3'
+  s.add_development_dependency 'sqlite3'
 end
