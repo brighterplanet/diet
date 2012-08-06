@@ -2,6 +2,9 @@
 # See LICENSE for details.
 # Contact Brighter Planet for dual-license arrangements.
 
+require 'earth/diet/diet_class'
+require 'earth/diet/food_group'
+
 module BrighterPlanet
   module Diet
     module ImpactModel

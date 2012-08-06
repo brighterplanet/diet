@@ -1,3 +1,5 @@
+require 'earth/diet/diet_class'
+
 module BrighterPlanet
   module Diet
     module Relationships
